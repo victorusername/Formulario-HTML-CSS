@@ -1,53 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <!--DOCTYPE mostra que o tipo do arquivo é em HTML-->
+
+<html lang="en"> <!--html lang é linguagem que o html vai estar-->
+<head> <!--Head é a parte do cabeçalho onde tem as informações sobre o documento-->
     <!-- Metadados -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit=no>
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen"> 
     <!--Title aparece na aba-->
-    <title>Cadastro</title>
+    <title>Cadastro</title> <!--É o nome da pagina-->
     
 </head>
 
 <body>
     
     <!-- Cabeçalho com titulo e subtitulo (ambos com css de id "titulo")-->
-    <div>
-        <h1>Cadastro de DEVs</h1>
-        <p>Complete suas informações abaixo:</p>
+    <div> <!--Div divide o codigo-->
+        <h1 id="titulo">Cadastro de DEVs</h1> 
+        <p id="subtitulo">Complete suas informações abaixo:</p>
         <br>
     </div>
 
     <!-- Inicio do formulário-->
-    <form>
+    <form> <!--Tag que começa a criar o formulario-->
 
-        <fieldset>
+        <fieldset class="grupo">
             <!-- Campo do nome com legenda "nome" e css de classe "campo"-->
-            <div>
-                <label>Nome</label>
-                <input type="text" name="nome" id="nome">                                
+            <div class="campo">
+                <label for="nome"><strong>Nome</strong></label> <!--Label é explicação do campo -->
+                <input type="text" name="nome" id="nome" required> <!--Entrada de valor--> <!--Required é um campo obrigatorio-->
             </div>
 
             <!-- Campo do sobrenome com legenda "sobrenome" e css de classe campo"-->
-            <div>
-                <label>Sobrenome</label>
-                <input type="text" name="sobrenome" id="sobrenome">                
+            <div class="campo">
+                <label for="sobrenome"><strong>Sobrenome</strong></label>
+                <input type="text" name="sobrenome" id="sobrenome" required>                
 
             </div>            
         </fieldset>
 
-        <fieldset>
-        <div>
-            <label>Email</label>
-            <input type="email" nome="email" id="email">
+        <div class="campo">
+            <label for="email"><strong>Email</strong></label>
+            <input type="email" nome="email" id="email" required>
         </div>
 
-        <div>
-            <label>De qual lado da aplicação, você desenvolve?</label>
+        <div class="campo">
+            <label><strong>De qual lado da aplicação, você desenvolve?</strong></label>
             <label>
-                <input type="radio" name="devweb" value="frontend" checked>Front-end
+                <input type="radio" name="devweb" value="frontend" checked>Front-end <!--Checked é pra vir ja preenchido automaticamente esta opção-->
             </label>
             <label>
                 <input type="radio" name="devweb" value="backend">Back-end
@@ -57,22 +56,22 @@
             </label>
         </div>
 
-        <div>
-            <label>Senioridade</label>
-            <select id="senioridade">
-                <option selected disabled valor="">Selecione</option>
-                <option>Junior</option>
+        <div class="campo">
+            <label for="senioridade"><strong>Senioridade</strong></label> 
+            <select id="senioridade"> <!-- Campo de seleção--> 
+                <option selected disabled valor="">Selecione</option> <!--vai estar com a opão selecione porem ela estara sem valor -->
+                <option>Junior</option> <!--Opções-->
                 <option>Pleno</option>
                 <option>Senior</option>
             </select>
         </div>
         
-        <fieldset>
-            <div>
-                <label>Selecione as tecnologias que utiliza:</label><br><br>
-                <input type="checkbox" id="tecnologia1" nome="tecnologia1" value="HTML">
-                <label for="tecnologia1">HTML</label>
-                <input type="checkbox" id="tecnologia 2" nome="tecnologia2" value="CSS">
+        <fieldset class="grupo">
+            <div class="checkbox">
+                <label><strong>Selecione as tecnologias que utiliza:</strong></label><br><br> <!--Pergunta--> 
+                <input type="checkbox" id="tecnologia1" nome="tecnologia1" value="HTML"> <!--Checkbox é a caixinha de selecionar, Lembrando id tem que ter seu proprio valor-->
+                <label for="tecnologia1">HTML</label> <!--label é oque vai mostrar-->
+                <input type="checkbox" id="tecnologia2" nome="tecnologia2" value="CSS">
                 <label for="tecnologia2">CSS</label>
                 <input type="checkbox" id="tecnologia3" nome="tecnologia3" value="JavaScript">
                 <label for="tecnologia3">JavaScript</label>
@@ -87,14 +86,18 @@
              </div>
         </fieldset>
 
-        <div>
-            <label>Conte um pouco da sua experiência:</label>
-            <textarea row="6" style="width: 26em" id="experiência" nome="experiência"></textarea>
+        <div class="campo">
+            <label><strong>Conte um pouco da sua experiência:</strong></label> <!--Pergunta ou campo-->
+            <textarea row="6" style="width: 26em" id="experiência" nome="experiência"></textarea> <!--Area de texto-->
         </div>
 
-        <button type="submit">Concluído</button>
+        <button class="botão" type="submit" onsubmit="">Enviar</button>
 
     </form>
-    
+    <script>
+        window.alert("Seja Muito Bem-Vindo DEV!") //Mensagem de alerta 
+        window.confirm("Clique em confirmar para acessar o formulario")
+        //Mensagem para confirmar
+    </script>
 </body>
 </html>
